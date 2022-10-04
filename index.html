@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 04/10/20222</title>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js" integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk" crossorigin="anonymous"></script>
+    <script src="aula041022.js"></script>
+</head>
+<body>
+    <button type="button" class="btn btn-dark" onclick="fun()">DOES NOTHING</button>
+    
+    <input type="range" class="range" id="range" oninput="idk()">
+    <label for="range" class="form-label" id="rangelabel">0</label>
+
+    <input type="checkbox" name="Metal" id="Metal">Metal</input>
+    <input type="checkbox" name="" id="Rock">Rock</input>
+    <input type="checkbox" name="" id="Sertanejo">Sertanejo</input>
+    <input type="checkbox" name="" id="Pop">Pop</input>
+    <input type="checkbox" name="" id="Outros" onclick="disable()">Outros</input>
+
+    <p></p>
+
+    <input type="date" name="" id="data" onblur="data()">
+
+    <input type="email" name="mail" id="mail" onblur="emailValidate()">
+
+</body>
+</html>
