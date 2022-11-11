@@ -1,0 +1,12 @@
+form div{
+    padding: 5px;
+    margin-bottom: 10px;
+}
+
+#corvalor{
+    text-transform: uppercase;
+}
+
+#emailmsg{
+    color: red;
+}

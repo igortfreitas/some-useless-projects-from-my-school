@@ -1,1 +1,0 @@
-# some-useless-projects-from-my-school

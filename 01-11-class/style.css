@@ -1,0 +1,76 @@
+.body {
+    background-color: black;
+}
+
+.navbar-brand {
+    color: rgb(196, 13, 196);
+}
+
+.navbar-brand:hover {
+    color: white;
+}
+
+.navbar-brand:focus {
+    color: white;
+}
+
+.nav-link {
+    color: rgb(196, 13, 196);
+}
+
+.nav-link:hover {
+    color: white;
+}
+
+.nav-link:focus {
+    color: white;
+}
+
+.form-label {
+    color: white;
+}
+
+.form-control {
+    background-color: rgb(31, 30, 30);
+    color: white;
+}
+
+.form-control:focus{
+    border: 2px solid purple;
+    background-color: rgb(31, 30, 30);  
+    color: white;
+}
+
+.form-check-label {
+    color: white;
+}
+
+.input-group-text {
+    background-color: rgb(31, 30, 30);
+    border: 2px solid purple;
+    color: white;
+}
+
+.accordion-button {
+    background-color: rgb(31, 30, 30);
+    color: white;
+}
+
+.accordion-button:not(.collapsed){
+    color: inherit;
+    border: 1px solid purple;
+    background-color: rgb(31, 30, 30);
+    color: white;
+    
+}
+
+.accordion-collapse {
+    border: 2px solid purple;
+    background-color: rgb(31, 30, 30);
+    color: white;
+}
+
+.modal-content {
+    background-color: rgb(31, 30, 30);
+    color: white;
+}

@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilo.css">
+    <script src="https://unpkg.com/imask"></script>
+    <title>Elementos de Formulário HTML</title>
+</head>
+<body>
+
+    <h1>Elementos de Formulário HTML</h1>
+
+    <form method="get" action="salvar.html">
+        <div>
+            <label for="nomecompleto">Digite seu nome completo: </label>
+            <input type="text" id="nomecompleto" name="nomecompleto" size="50" maxlength="50" placeholder="Seu nome é muito importante">
+        </div>
+
+        <div>
+            <input type="submit" id="btn01" name="btn01" value="Envio 01">
+            <button type="button" id="btn02" name="btn02" onclick="ola()">Envio 02</button>
+        </div>
+
+        <div>
+            <label for="cordosolhos">Selecione a cor dos seus olhos:</label>
+            <input type="color" id="cordosolhos" name="cordosolhos" onchange="mudaCor()">
+            <span id="corvalor">#000000</span>
+        </div>
+
+        <div>
+            <label for="trabalho">Envio o arquivo do seu trabalho:</label>
+            <input type="file" id="trabalho" name="trabalho">
+        </div>
+
+        <div>
+            <label for="senha">Digite sua Senha:</label>
+            <input type="password" id="senha" name="senha">
+            <input type="button" id="versenha" name="versenha" value="Mostrar" onclick="mostraSenha()">
+        </div>
+
+        <div>
+            <label for="senha">Digite sua Senha 2:</label>
+            <input type="password" id="senha2" name="senha2">
+            <input type="button" id="versenha2" name="versenha2" value="Mostrar" onclick="mostraSenha()">
+        </div>
+
+        <div>
+            <label for="sexo">Qual o seu sexo?</label>
+            <input type="radio" id="sexoM" name="sexo" value="M"> <label for="sexoM">M</label>
+            <input type="radio" id="sexoF" name="sexo" value="F" checked> <label for="sexoF">F</label>
+            <input type="radio" id="sexoOutro" name="sexo" value="O"> <label for="sexoOutro">Outro</label>
+        </div>
+
+        <div>
+            <label for="musica">Quais estilos musicais vc gosta?</label>
+            <input type="checkbox" id="musicaRock" name="musicaRock" value="Rock"> <label for="musicaRock">Rock and Roll</label>
+            <input type="checkbox" id="musicaPagode" name="musicaPagode" value="Pagode"> <label for="musicaPagode">Pagode</label>
+            <input type="checkbox" id="musicaFunk" name="musicaFunk" value="Funk"> <label for="musicaFunk">Funk</label>
+            <input type="checkbox" id="musicaClassica" name="musicaClassica" value="Classica"> <label for="musicaClassica">Classica</label>
+            
+            <input type="checkbox" id="musicaOutro" name="musicaOutro" value="Outro" onclick="mudaMusicaOutro(this)"> <label for="musicaOutro">Outro</label>
+            <input type="text" id="musicaOutroTexto" name="musicaOutroTexto" disabled>
+        </div>
+
+        <div>
+            <label for="volume">Volume da Música:</label>
+            <input type="range" id="volume" name="volume" min="0" max="100" value="0" onchange="mudaVolume(this.value)">
+            <span id="volume_valor">0</span>
+        </div>
+
+        <div>
+            <label for="dtnascimento">Data de Nascimento:</label>
+            <input type="date" id="dtnascimento" name="dtnascimento" onblur="mudaDataNascimento(this.value)">
+        </div>
+
+        <div>
+            <label for="compromisso">Data e Hora do Compromisso:</label>
+            <input type="datetime-local" id="compromisso" name="compromisso">
+        </div>
+
+        <div>
+            <label for="mes">Mês da SAC:</label>
+            <input type="month" id="mes" name="mes">
+        </div>
+
+        <div>
+            <label for="semana">Semana de Provas:</label>
+            <input type="week" id="semana" name="semana">
+        </div>
+
+        <div>
+            <label for="hora">Horário Diário de Estudos:</label>
+            <input type="time" id="hora" name="hora">
+        </div>
+
+        <div>
+            <label for="emailpessoal">E-mail Pessoal:</label>
+            <input type="email" id="emailpessoal" name="emailpessoal" onblur="verificaEmail(this)">
+            <span id="emailmsg"></span>
+        </div>
+
+        <div>
+            <label for="mesada">Mesada: R$</label>
+            <input type="number" id="mesada" name="mesada" step="0.01">
+        </div>
+
+        <div>
+            <label for="pesquisa">Pesquisar por:</label>
+            <input type="search" id="pesquisa" name="pesquisa">
+        </div>
+
+        <div>
+            <label for="celular">Celular:</label>
+            <input type="tel" id="celular" name="celular">
+        </div>
+
+        <div>
+            <label for="pagina">Página Pessoal:</label>
+            <input type="url" id="pagina" name="pagina" onblur="verifyUrl(this)">
+        </div>
+
+        <div>
+            <label for="mensagem">Mensagem:</label>
+            <textarea id="mensagem" name="mensagem" rows="10" cols="50" maxlength="500" onkeypress="verifyCharRemaining()" ></textarea>
+            <span id=msgspan></span>
+        </div>
+
+        <div>
+            <label for="estado">Estado Natal:</label>
+            <select name="estado" id="estado">
+                <option value=""></option>
+                <option value="1">ES</option>
+                <option value="2">RJ</option>
+                <option value="3" selected>SP</option>
+                <option value="4">MG</option>
+            </select>
+        </div>
+    </form>
+
+
+<script>
+
+    const phoneMask = IMask(
+  document.getElementById('celular'), {
+    mask: '+{55} (00) 00000-0000'
+  });
+
+function ola(){
+    var nome = document.getElementById("nomecompleto").value;
+    alert("Olá "+nome+"!");
+}
+
+function mudaCor(){
+    var cor = document.getElementById("cordosolhos").value;
+    document.getElementById("corvalor").innerHTML = cor;
+}
+
+function mostraSenha(){
+    var campo = document.getElementById("senha");
+    var botao = document.getElementById("versenha");
+
+    if(campo.type == "password"){
+        campo.type = "text";
+        botao.value = "Escorder";
+    }
+    else{
+        campo.type = "password";
+        botao.value = "Mostrar";
+    }
+}
+
+function mudaVolume(volume){
+    document.getElementById("volume_valor").innerHTML = volume;
+}
+
+function mudaMusicaOutro(campo){
+    var campo_input = document.getElementById("musicaOutroTexto");
+
+    if(campo.checked){
+        campo_input.disabled = false;
+        campo_input.focus();
+    }
+    else{
+        campo_input.disabled = true;
+        campo_input.value = "";
+    }
+}
+
+function mudaDataNascimento(dt){
+    /*var ano = dt.slice(0,4);
+    var mes = dt.slice(5,7);
+    var dia = dt.slice(8,10);
+    var dt_correta = dia+"/"+mes+"/"+ano;*/
+
+    dt_vetor = dt.split("-");
+    var dt_correta = dt_vetor[2]+"/"+dt_vetor[1]+"/"+dt_vetor[0];
+    
+    alert("A data digitada foi "+ dt_correta);
+}
+
+function verificaEmail(campo){
+    var email = campo.value;
+    var msg = document.getElementById("emailmsg");
+
+    //if(email.search("@") < 0 || email.search(" ") >= 0){
+    if( !email.includes("@") || email.includes(" ") ){
+        msg.innerHTML = "E-mail Inválido!";
+        campo.focus();
+    }
+    else{
+        msg.innerHTML = "";
+    }
+}
+
+function verifyUrl(campo) {
+    var urlOld = campo.value;
+
+    if (!urlOld.startsWith("https://")){
+        campo.value = "https://"+urlOld
+    }
+    else{
+        console.log("url invalida")
+    }
+    
+    campo.value = campo.value.replace(/\s+/g, "")
+}
+
+function verifyCharRemaining() {
+    var charCount = document.getElementById("mensagem").value
+    var msgChar = document.getElementById("msgspan")
+    msgChar.innerHTML = "Faltam " + (500 - charCount.length) + " caracteres"
+}
+
+</script>
+
+</body>
+</html>

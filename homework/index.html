@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homework</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+    <script src="https://unpkg.com/imask"></script>
+</head>
+<body>
+    <div class="body">
+        <div>
+            <h1 class="title">Formulário de Contato</h1>
+
+            <div class="div">
+                <label class="label" for="name">Nome</label>
+                <input class="text" type="text" name="name" id="name" placeholder="Digite seu nome">
+            </div>
+
+            <div class="div">
+                <label class="label" for="cell">Telefone</label>
+                <input class="text" type="text" name="cell" id="cell" placeholder="+55 (00) 00000-0000" onkeypress="phoneValidator()">
+            </div>
+
+            <div class="div">
+                <label class="label" for="email">Email</label>
+                <input class="text" type="email" name="email" id="email" placeholder="yourmail@mail.com" oninput="emailValidator()" >
+            </div>
+
+            <div class="div">
+                <label class="label" for="message">Mensagem</label>
+                <textarea class="textarea" name="message" id="message" cols="60" rows="5" placeholder="Digite sua mensagem" maxlength="300" oninput="countTextLeft()"></textarea>
+            </div>
+
+            <div>
+                <input class="submitButton" type="button" value="Enviar" onclick="submitData()">
+                <span class="textLeft" id="textLeft"></span>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
