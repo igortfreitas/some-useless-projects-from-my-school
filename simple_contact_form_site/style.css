@@ -1,0 +1,13 @@
+body {
+  background-color: #353232;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+  color: #333;
+}
+
+#message-counter {
+  color: gray;
+  position: absolute;
+  right: 25px;
+  bottom: 5px;
+}

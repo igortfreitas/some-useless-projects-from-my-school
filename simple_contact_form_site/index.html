@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+    <script defer src="https://unpkg.com/imask"></script>
+    <script
+      defer
+      src="https://kit.fontawesome.com/e3e0b0fb6f.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="main.js" defer></script>
+    <link rel="stylesheet" href="style.css" />
+    <title>Contact</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+          <i class="fa-solid fa-house"></i>
+          Contact Form</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNavDropdown"
+          aria-controls="navbarNavDropdown"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="container mt-5 pt-5">
+      <form class="needs-validation" novalidate>
+        <div class="row">
+          <div class="col">
+            <i class="fa-solid fa-user text-white"></i>
+            <label for="name" class="form-label text-white">Name</label>
+            <input
+              type="text"
+              name="name"
+              id="name"
+              class="form-control"
+              required
+              placeholder="Write your name here."
+            />
+          </div>
+          <div class="col">
+            <i class="fa-solid fa-phone text-white"></i>
+            <label for="phone" class="form-label text-white">Phone</label>
+            <input
+              type="tel"
+              name="phone"
+              id="phone"
+              class="form-control"
+              required
+              placeholder="+00 (00) 0 0000-0000"
+            />
+          </div>
+        </div>
+        <div class="row mt-3">
+          <div class="col">
+            <i class="fa-solid fa-envelope text-white"></i>
+            <label for="email" class="form-label text-white">Email</label>
+            <input
+              type="email"
+              name="email"
+              id="email"
+              class="form-control"
+              required
+              placeholder="your@email.com"
+              pattern="^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$"
+            />
+          </div>
+        </div>
+        <div class="row mt-3">
+          <div class="col position-relative text-white">
+            <i class="fa-solid fa-message text-white"></i>
+            <label for="message" class="form-label">Message</label>
+            <textarea
+              name="message"
+              id="message"
+              cols="30"
+              rows="10"
+              class="form-control"
+              required
+              maxlength="300"
+              placeholder="Write your message here."
+              oninput="document.getElementById('message-counter').textContent = `${this.value.length} / 300`"
+            ></textarea>
+            <span id="message-counter">0 / 300</span>
+          </div>
+        </div>
+        <div class="row mt-3">
+          <div class="col">
+            <input
+              type="button"
+              value="Submit"
+              class="btn btn-success"
+              data-bs-toggle="modal"
+              data-bs-target="#exampleModal"
+            />
+          </div>
+          <div class="col d-flex justify-content-end">
+            <input type="button" value="Cancel" class="btn btn-secondary" />
+          </div>
+        </div>
+      </form>
+    </div>
+    <div
+      class="modal fade"
+      id="exampleModal"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">
+              Form submitted successfully!
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">Your message was sended!</div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-success"
+              data-bs-dismiss="modal"
+            >
+              Ok
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
